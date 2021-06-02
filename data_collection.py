@@ -62,7 +62,7 @@ def get_next_link(links, clean_text):
 
 
 if __name__ == '__main__':
-    article = 'Anime'
+    article = 'Pokémon'
     print('/wiki/'+article)
     first5_ptags = get_first5_ptags(article)
     links_dict,dirty_links = get_all_links(first5_ptags)
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     clean_text = get_clean_text(dirty_text)
     next_link = get_next_link(links_dict, clean_text)
     print(next_link)
-    while next_link != '/wiki/Outline_of_philosophy':
+    while next_link != '/wiki/Outline_of_philosophy' and next_link != '/wiki/Philosophy':
         next_article = next_link[6:]
         first5_ptags = get_first5_ptags(next_article)
         links_dict,dirty_links = get_all_links(first5_ptags)
